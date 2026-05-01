@@ -33,6 +33,18 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        brand: {
+          cream: "#FBF7EE",
+          paper: "#FFFDF7",
+          ink: "#1F1A1A",
+          ink70: "#4B4040",
+          ink50: "#7A6D6B",
+          accent: "#D45F46",
+          "accent-soft": "#F4D7BC",
+          sage: "#8AA591",
+          sky: "#BFD8E2",
+          mustard: "#E2A03F",
+        },
       },
       borderRadius: {
         none: "0px",
@@ -59,7 +71,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "var(--font-body)",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
@@ -67,6 +79,13 @@ module.exports = {
           "Helvetica Neue",
           "Ubuntu",
           "sans-serif",
+        ],
+        display: [
+          "var(--font-display)",
+          "Georgia",
+          "Cambria",
+          "Times New Roman",
+          "serif",
         ],
       },
       keyframes: {
@@ -139,6 +158,14 @@ module.exports = {
           "0%": { transform: "translateY(-100%)" },
           "100%": { transform: "translateY(0)" },
         },
+        "lift": {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-3px)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         ring: "ring 2.2s cubic-bezier(0.5, 0, 0.5, 1) infinite",
@@ -154,6 +181,8 @@ module.exports = {
         enter: "enter 200ms ease-out",
         "slide-in": "slide-in 1.2s cubic-bezier(.41,.73,.51,1.02)",
         leave: "leave 150ms ease-in forwards",
+        lift: "lift 200ms ease-out forwards",
+        "fade-in": "fade-in 0.4s ease-out both",
       },
     },
   },
