@@ -85,52 +85,94 @@ export const listProducts = async ({
     })
 }
 
-/**
- * This will fetch 100 products to the Next.js cache and sort them based on the sortBy parameter.
- * It will then return the paginated products based on the page and limit parameters.
- */
 export const listProductsWithSort = async ({
-  page = 0,
+  page = 1,
   queryParams,
   sortBy = "created_at",
   countryCode,
+  q,
+  categoryIds,
+  publisherSlugs,
 }: {
   page?: number
   queryParams?: HttpTypes.FindParams & HttpTypes.StoreProductParams
   sortBy?: SortOptions
   countryCode: string
+  q?: string
+  categoryIds?: string[]
+  publisherSlugs?: string[]
 }): Promise<{
   response: { products: HttpTypes.StoreProduct[]; count: number }
   nextPage: number | null
   queryParams?: HttpTypes.FindParams & HttpTypes.StoreProductParams
 }> => {
   const limit = queryParams?.limit || 12
+  const isPriceSort = sortBy === "price_asc" || sortBy === "price_desc"
+  const hasPublisherFilter = !!publisherSlugs?.length
+  const needsMemoryOps = isPriceSort || hasPublisherFilter
+
+  const baseQueryParams = {
+    ...queryParams,
+    ...(q ? { q } : {}),
+    ...(categoryIds?.length ? { category_id: categoryIds } : {}),
+  }
+
+  if (needsMemoryOps) {
+    const {
+      response: { products },
+    } = await listProducts({
+      pageParam: 1,
+      queryParams: { ...baseQueryParams, limit: 200 },
+      countryCode,
+    })
+
+    let filtered = products
+
+    if (hasPublisherFilter) {
+      filtered = filtered.filter(
+        (p) =>
+          typeof p.metadata?.publisher === "string" &&
+          publisherSlugs!.includes(p.metadata.publisher)
+      )
+    }
+
+    if (isPriceSort) {
+      filtered = sortProducts(filtered, sortBy)
+    }
+
+    const filteredCount = filtered.length
+    const pageStart = (page - 1) * limit
+    return {
+      response: {
+        products: filtered.slice(pageStart, pageStart + limit),
+        count: filteredCount,
+      },
+      nextPage: filteredCount > pageStart + limit ? page + 1 : null,
+      queryParams,
+    }
+  }
+
+  const orderMap: Record<string, string> = {
+    created_at: "-created_at",
+    title: "title",
+  }
 
   const {
     response: { products, count },
   } = await listProducts({
-    pageParam: 0,
+    pageParam: page,
     queryParams: {
-      ...queryParams,
-      limit: 100,
+      ...baseQueryParams,
+      limit,
+      order: orderMap[sortBy] || "-created_at",
     },
     countryCode,
   })
 
-  const sortedProducts = sortProducts(products, sortBy)
-
-  const pageParam = (page - 1) * limit
-
-  const nextPage = count > pageParam + limit ? pageParam + limit : null
-
-  const paginatedProducts = sortedProducts.slice(pageParam, pageParam + limit)
-
+  const pageStart = (page - 1) * limit
   return {
-    response: {
-      products: paginatedProducts,
-      count,
-    },
-    nextPage,
+    response: { products, count },
+    nextPage: count > pageStart + limit ? page + 1 : null,
     queryParams,
   }
 }
