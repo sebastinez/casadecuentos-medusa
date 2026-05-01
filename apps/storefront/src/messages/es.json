@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "siteName": "Casa de Cuentos",
+    "siteTagline": "Librería infantil",
+    "homeTitle": "Casa de Cuentos · Librería infantil",
+    "homeDescription": "Una pequeña casa llena de cuentos para niñas y niños, en español. Descubre nuestro catálogo, ven a nuestros eventos o pásate a saludar."
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "body": "La página a la que intentaste acceder no existe.",
+    "back": "Volver al inicio"
+  },
+  "common": {
+    "loading": "Cargando…",
+    "readMore": "Leer más",
+    "viewAll": "Ver todo",
+    "back": "Volver",
+    "close": "Cerrar",
+    "submit": "Enviar",
+    "openMenu": "Abrir menú",
+    "language": "Idioma",
+    "languageDe": "Alemán",
+    "languageEs": "Español"
+  },
+  "nav": {
+    "home": "Inicio",
+    "store": "Catálogo",
+    "events": "Eventos",
+    "about": "Sobre nosotras",
+    "contact": "Contacto",
+    "account": "Mi cuenta",
+    "cart": "Cesta",
+    "cartCount": "Cesta ({count})",
+    "menu": "Menú",
+    "skipToContent": "Saltar al contenido"
+  },
+  "footer": {
+    "categories": "Categorías",
+    "collections": "Colecciones",
+    "explore": "Explorar",
+    "about": "Sobre nosotras",
+    "events": "Eventos",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "rights": "© {year} Casa de Cuentos. Todos los derechos reservados.",
+    "tagline": "Cuentos en español para crecer con cariño."
+  },
+  "home": {
+    "heroEyebrow": "Librería infantil",
+    "heroTitle": "Cuentos para crecer.",
+    "heroSubtitle": "Una casa pequeña llena de libros en español, pensados para acompañar la infancia con ternura y curiosidad.",
+    "heroCtaCatalog": "Ver el catálogo",
+    "heroCtaEvents": "Próximos eventos",
+    "featuredTitle": "Recién llegados",
+    "featuredSubtitle": "Una selección reciente de nuestra estantería.",
+    "eventsTeaserTitle": "Próximamente en la casa",
+    "eventsTeaserSubtitle": "Lecturas, talleres y encuentros para familias.",
+    "aboutTeaserTitle": "Hola, soy María Eugenia",
+    "aboutTeaserBody": "Fundé Casa de Cuentos para que los más pequeños tengan una casa donde encontrar libros en español que abracen su lengua y su imaginación.",
+    "aboutTeaserCta": "Conocer la historia"
+  },
+  "store": {
+    "title": "Catálogo",
+    "subtitle": "Todos los libros que tenemos en casa.",
+    "searchPlaceholder": "Buscar por título, autor…",
+    "filtersTitle": "Filtros",
+    "filterCategories": "Categorías",
+    "filterPublishers": "Editoriales",
+    "noResults": "No encontramos libros con esos filtros.",
+    "resetFilters": "Quitar filtros",
+    "sortBy": "Ordenar por",
+    "sortNewest": "Más recientes",
+    "sortName": "Título (A-Z)",
+    "sortPriceAsc": "Precio: menor a mayor",
+    "sortPriceDesc": "Precio: mayor a menor"
+  },
+  "cart": {
+    "title": "Cesta",
+    "empty": "Tu cesta está vacía.",
+    "exploreProducts": "Explorar libros",
+    "goToCart": "Ir a la cesta",
+    "subtotal": "Subtotal",
+    "exclTaxes": "(impuestos no incluidos)",
+    "quantity": "Cantidad: {count}",
+    "remove": "Quitar",
+    "goToAllProducts": "Ir a todos los libros"
+  },
+  "product": {
+    "publisher": "Editorial",
+    "addToCart": "Añadir a la cesta",
+    "outOfStock": "Agotado",
+    "moreInfo": "Más detalles",
+    "relatedTitle": "También te puede gustar"
+  },
+  "events": {
+    "title": "Eventos",
+    "subtitle": "Lecturas, talleres y encuentros en la librería.",
+    "upcoming": "Próximos",
+    "past": "Anteriores",
+    "noUpcoming": "Pronto anunciaremos los próximos eventos.",
+    "noPast": "Aún no tenemos eventos pasados publicados.",
+    "when": "Cuándo",
+    "where": "Dónde",
+    "until": "hasta",
+    "rsvp": "Registrarse / RSVP"
+  },
+  "about": {
+    "title": "Sobre Casa de Cuentos",
+    "subtitle": "La historia de una librería pequeña con un sueño grande.",
+    "founderTitle": "Hola, soy María Eugenia",
+    "founderBio1": "Casa de Cuentos nació de un deseo sencillo: que los niños y las niñas que crecen en un entorno de habla alemana puedan acceder a libros en su lengua — historias en español que abrazan su mundo y alimentan su imaginación.",
+    "founderBio2": "Creo que los libros construyen puentes. Entre idiomas, entre culturas y entre generaciones. Te invito a visitarnos y a dejarte llevar por las historias.",
+    "storeTitle": "La librería",
+    "storeBody": "Nuestro pequeño local es un lugar para hojear, escuchar y descubrir — con una selección cuidadosa de libros infantiles en español para todas las edades.",
+    "storeCta": "Ver el catálogo"
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Escríbenos y te respondemos pronto.",
+    "fieldName": "Nombre",
+    "fieldEmail": "Correo electrónico",
+    "fieldSubject": "Asunto",
+    "fieldMessage": "Mensaje",
+    "submit": "Enviar mensaje",
+    "submitting": "Enviando…",
+    "success": "¡Gracias! Recibimos tu mensaje.",
+    "error": "Algo salió mal. Inténtalo de nuevo en unos minutos.",
+    "addressTitle": "Dirección",
+    "hoursTitle": "Horario",
+    "address": "Calle Ejemplo 1\n10115 Berlín",
+    "hours": "Ma – Vi: 10:00 – 18:00 h\nSá: 10:00 – 15:00 h",
+    "phone": "+49 30 000 0000",
+    "email": "hola@casadecuentos.de"
+  }
+}

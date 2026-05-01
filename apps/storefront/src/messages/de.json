@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "siteName": "Casa de Cuentos",
+    "siteTagline": "Kinderbuchhandlung",
+    "homeTitle": "Casa de Cuentos · Spanische Kinderbuchhandlung",
+    "homeDescription": "Ein kleines Haus voller Geschichten für Kinder, auf Spanisch. Entdecke unseren Katalog, komm zu unseren Veranstaltungen oder besuche uns einfach."
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "body": "Die Seite, die du aufrufen wolltest, existiert nicht.",
+    "back": "Zur Startseite"
+  },
+  "common": {
+    "loading": "Lädt…",
+    "readMore": "Weiterlesen",
+    "viewAll": "Alle anzeigen",
+    "back": "Zurück",
+    "close": "Schließen",
+    "submit": "Absenden",
+    "openMenu": "Menü öffnen",
+    "language": "Sprache",
+    "languageDe": "Deutsch",
+    "languageEs": "Spanisch"
+  },
+  "nav": {
+    "home": "Startseite",
+    "store": "Katalog",
+    "events": "Veranstaltungen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "account": "Mein Konto",
+    "cart": "Warenkorb",
+    "cartCount": "Warenkorb ({count})",
+    "menu": "Menü",
+    "skipToContent": "Zum Inhalt springen"
+  },
+  "footer": {
+    "categories": "Kategorien",
+    "collections": "Kollektionen",
+    "explore": "Entdecken",
+    "about": "Über uns",
+    "events": "Veranstaltungen",
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "rights": "© {year} Casa de Cuentos. Alle Rechte vorbehalten.",
+    "tagline": "Spanische Geschichten, die mit den Kleinen wachsen."
+  },
+  "home": {
+    "heroEyebrow": "Kinderbuchhandlung",
+    "heroTitle": "Geschichten zum Großwerden.",
+    "heroSubtitle": "Ein kleines Haus voller spanischer Kinderbücher — ausgewählt, um die Kindheit mit Wärme und Neugier zu begleiten.",
+    "heroCtaCatalog": "Zum Katalog",
+    "heroCtaEvents": "Nächste Veranstaltungen",
+    "featuredTitle": "Frisch eingetroffen",
+    "featuredSubtitle": "Eine kleine Auswahl aus unserem Regal.",
+    "eventsTeaserTitle": "Bald bei uns im Haus",
+    "eventsTeaserSubtitle": "Lesungen, Workshops und Treffen für Familien.",
+    "aboutTeaserTitle": "Hallo, ich bin María Eugenia",
+    "aboutTeaserBody": "Ich habe Casa de Cuentos gegründet, damit die Kleinsten ein Zuhause für spanische Bücher haben — Bücher, die ihre Sprache und ihre Fantasie umarmen.",
+    "aboutTeaserCta": "Die Geschichte lesen"
+  },
+  "store": {
+    "title": "Katalog",
+    "subtitle": "Alle Bücher, die bei uns zu Hause sind.",
+    "searchPlaceholder": "Nach Titel oder Autor:in suchen…",
+    "filtersTitle": "Filter",
+    "filterCategories": "Kategorien",
+    "filterPublishers": "Verlage",
+    "noResults": "Keine Bücher passen zu diesen Filtern.",
+    "resetFilters": "Filter zurücksetzen",
+    "sortBy": "Sortieren nach",
+    "sortNewest": "Neueste",
+    "sortName": "Titel (A-Z)",
+    "sortPriceAsc": "Preis: aufsteigend",
+    "sortPriceDesc": "Preis: absteigend"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Dein Warenkorb ist leer.",
+    "exploreProducts": "Bücher entdecken",
+    "goToCart": "Zum Warenkorb",
+    "subtotal": "Zwischensumme",
+    "exclTaxes": "(zzgl. Steuern)",
+    "quantity": "Menge: {count}",
+    "remove": "Entfernen",
+    "goToAllProducts": "Zur Bücherübersicht"
+  },
+  "product": {
+    "publisher": "Verlag",
+    "addToCart": "In den Warenkorb",
+    "outOfStock": "Ausverkauft",
+    "moreInfo": "Mehr Details",
+    "relatedTitle": "Das könnte dir auch gefallen"
+  },
+  "events": {
+    "title": "Veranstaltungen",
+    "subtitle": "Lesungen, Workshops und Treffen in der Buchhandlung.",
+    "upcoming": "Demnächst",
+    "past": "Vergangen",
+    "noUpcoming": "Bald geben wir die nächsten Veranstaltungen bekannt.",
+    "noPast": "Noch keine vergangenen Veranstaltungen veröffentlicht.",
+    "when": "Wann",
+    "where": "Wo",
+    "until": "bis",
+    "rsvp": "Anmelden / RSVP"
+  },
+  "about": {
+    "title": "Über Casa de Cuentos",
+    "subtitle": "Die Geschichte einer kleinen Buchhandlung mit einem großen Traum.",
+    "founderTitle": "Hallo, ich bin María Eugenia",
+    "founderBio1": "Casa de Cuentos entstand aus einem einfachen Wunsch: Kindern in einer deutschsprachigen Umgebung Zugang zu Büchern in ihrer Sprache zu geben — spanischsprachigen Geschichten, die ihre Welt umarmen und ihre Fantasie nähren.",
+    "founderBio2": "Ich glaube daran, dass Bücher Brücken bauen. Zwischen Sprachen, zwischen Kulturen und zwischen den Generationen. Ich lade dich ein, uns zu besuchen und dich von den Geschichten führen zu lassen.",
+    "storeTitle": "Die Buchhandlung",
+    "storeBody": "Unser kleines Geschäft ist ein Ort zum Stöbern, Vorlesen und Entdecken — mit einer handverlesenen Auswahl spanischsprachiger Kinderbücher für jedes Alter.",
+    "storeCta": "Zum Katalog"
+  },
+  "contact": {
+    "title": "Schreib uns",
+    "subtitle": "Wir freuen uns auf deine Nachricht und melden uns bald.",
+    "fieldName": "Name",
+    "fieldEmail": "E-Mail",
+    "fieldSubject": "Betreff",
+    "fieldMessage": "Nachricht",
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet…",
+    "success": "Danke! Wir haben deine Nachricht erhalten.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuch es in ein paar Minuten erneut.",
+    "addressTitle": "Adresse",
+    "hoursTitle": "Öffnungszeiten",
+    "address": "Musterstraße 1\n10115 Berlin",
+    "hours": "Di – Fr: 10:00 – 18:00 Uhr\nSa: 10:00 – 15:00 Uhr",
+    "phone": "+49 30 000 0000",
+    "email": "hola@casadecuentos.de"
+  }
+}
