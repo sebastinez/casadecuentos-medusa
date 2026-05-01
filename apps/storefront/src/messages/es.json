@@ -127,9 +127,9 @@
     "error": "Algo salió mal. Inténtalo de nuevo en unos minutos.",
     "addressTitle": "Dirección",
     "hoursTitle": "Horario",
-    "address": "Calle Ejemplo 1\n10115 Berlín",
-    "hours": "Ma – Vi: 10:00 – 18:00 h\nSá: 10:00 – 15:00 h",
-    "phone": "+49 30 000 0000",
-    "email": "hola@casadecuentos.de"
+    "address": "Ahornweg 22, 8630 Rüti ZH, Switzerland",
+    "hours": "Todos los días 08:00 - 17:00",
+    "phone": "+41 76 474 3828",
+    "email": "info@casadecuentos.ch"
   }
 }
