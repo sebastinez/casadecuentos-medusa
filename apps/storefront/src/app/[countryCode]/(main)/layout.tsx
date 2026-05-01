@@ -1,5 +1,9 @@
 import { Metadata } from "next"
+import { NextIntlClientProvider } from "next-intl"
+import { getMessages, setRequestLocale } from "next-intl/server"
+import { notFound } from "next/navigation"
 
+import { isLocale } from "@i18n/config"
 import { listCartOptions, retrieveCart } from "@lib/data/cart"
 import { retrieveCustomer } from "@lib/data/customer"
 import { getBaseURL } from "@lib/util/env"
@@ -13,19 +17,33 @@ export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
 }
 
-export default async function PageLayout(props: { children: React.ReactNode }) {
-  const customer = await retrieveCustomer()
-  const cart = await retrieveCart()
+export default async function PageLayout(props: {
+  children: React.ReactNode
+  params: Promise<{ countryCode: string }>
+}) {
+  const { countryCode } = await props.params
+
+  if (!isLocale(countryCode)) {
+    notFound()
+  }
+
+  setRequestLocale(countryCode)
+
+  const [customer, cart, messages] = await Promise.all([
+    retrieveCustomer(),
+    retrieveCart(),
+    getMessages({ locale: countryCode }),
+  ])
+
   let shippingOptions: StoreCartShippingOption[] = []
 
   if (cart) {
     const { shipping_options } = await listCartOptions()
-
     shippingOptions = shipping_options
   }
 
   return (
-    <>
+    <NextIntlClientProvider locale={countryCode} messages={messages}>
       <Nav />
       {customer && cart && (
         <CartMismatchBanner customer={customer} cart={cart} />
@@ -38,8 +56,8 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
           shippingOptions={shippingOptions}
         />
       )}
-      {props.children}
+      <main id="main-content">{props.children}</main>
       <Footer />
-    </>
+    </NextIntlClientProvider>
   )
 }
