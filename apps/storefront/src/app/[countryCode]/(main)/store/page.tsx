@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { getTranslations } from "next-intl/server"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 
 import { isLocale } from "@i18n/config"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
@@ -30,6 +30,7 @@ type Params = {
 export default async function StorePage(props: Params) {
   const params = await props.params
   const searchParams = await props.searchParams
+  setRequestLocale(params.countryCode)
   const { sortBy, page, q } = searchParams
 
   const categoryIds = searchParams.category
