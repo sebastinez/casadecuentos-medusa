@@ -1,7 +1,8 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
+import { locales } from "@i18n/config"
 import { listProducts } from "@lib/data/products"
-import { getRegion, listRegions } from "@lib/data/regions"
+import { getRegion } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
 import { HttpTypes } from "@medusajs/types"
 
@@ -12,36 +13,19 @@ type Props = {
 
 export async function generateStaticParams() {
   try {
-    const countryCodes = await listRegions().then((regions) =>
-      regions?.map((r) => r.countries?.map((c) => c.iso_2)).flat()
-    )
-
-    if (!countryCodes) {
-      return []
-    }
-
-    const promises = countryCodes.map(async (country) => {
+    const promises = locales.map(async (countryCode) => {
       const { response } = await listProducts({
-        countryCode: country,
+        countryCode,
         queryParams: { limit: 100, fields: "handle" },
       })
 
-      return {
-        country,
-        products: response.products,
-      }
+      return response.products
+        .filter((product) => product.handle)
+        .map((product) => ({ countryCode, handle: product.handle }))
     })
 
-    const countryProducts = await Promise.all(promises)
-
-    return countryProducts
-      .flatMap((countryData) =>
-        countryData.products.map((product) => ({
-          countryCode: countryData.country,
-          handle: product.handle,
-        }))
-      )
-      .filter((param) => param.handle)
+    const all = await Promise.all(promises)
+    return all.flat()
   } catch (error) {
     console.error(
       `Failed to generate static paths for product pages: ${
