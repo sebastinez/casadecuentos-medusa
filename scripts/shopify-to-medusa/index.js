@@ -247,7 +247,7 @@ for (const [handle, { productRow, variants, images }] of productMap) {
       'Product External Id': '',
       'Variant Id': '',
       'Variant Title': variantTitle,
-      'Variant SKU': variant['Variant SKU'] || '',
+      'Variant SKU': variant['Variant Barcode']?.replace(/'/g, '').trim() || '',
       'Variant Barcode': variant['Variant Barcode']?.replace(/'/g, '').trim() || '',
       // Shopify "continue" = allow selling when out of stock = allow backorder
       'Variant Allow Backorder': policy === 'continue' ? 'true' : 'false',
@@ -261,7 +261,8 @@ for (const [handle, { productRow, variants, images }] of productMap) {
       'Variant Origin Country': '',
       'Variant MID Code': '',
       'Variant Material': '',
-      'Variant Price EUR': variant['Variant Price'] || '',
+      'Variant Price CHF': variant['Variant Price'] || '',
+      'Variant Price EUR': '',
       'Variant Price USD': '',
       'Variant Option 1 Name': variant['Option1 Name'] || '',
       'Variant Option 1 Value': variant['Option1 Value'] || '',
