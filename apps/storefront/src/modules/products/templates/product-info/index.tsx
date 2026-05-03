@@ -7,9 +7,19 @@ type ProductInfoProps = {
 }
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
+  const publisher =
+    typeof product.metadata?.publisher === "string"
+      ? product.metadata.publisher
+      : null
+
   return (
     <div id="product-info">
       <div className="flex flex-col gap-y-4 lg:max-w-[500px] mx-auto">
+        {publisher && (
+          <Text className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
+            {publisher}
+          </Text>
+        )}
         {product.collection && (
           <LocalizedClientLink
             href={`/collections/${product.collection.handle}`}
