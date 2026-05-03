@@ -68,7 +68,7 @@ for (const row of rows) {
   if (isNaN(parsed)) continue;
 
   // Medusa stores amounts in the smallest currency unit (Rappen)
-  const chfAmount = Math.round(parsed * 100);
+  const chfAmount = Math.round(parsed);
   skuPriceMap.set(sku, { chfAmount, title });
 }
 
@@ -122,7 +122,7 @@ async function run() {
 
     const mergedPrices = [
       ...existingPrices,
-      { currency_code: "chf", amount: chfAmount },
+      { currency_code: "chf", amount: (chfAmount / 100).toFixed(2) },
     ];
 
     // 3. Update the variant
