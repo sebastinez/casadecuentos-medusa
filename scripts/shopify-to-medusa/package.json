@@ -1,0 +1,12 @@
+{
+  "name": "shopify-to-medusa",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "convert": "node index.js"
+  },
+  "dependencies": {
+    "csv-parse": "^5.6.0",
+    "csv-stringify": "^6.5.0"
+  }
+}
