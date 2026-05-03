@@ -123,7 +123,6 @@ const outputHeaders = [
   'Product Tag 1',
   'Product Discountable',
   'Product External Id',
-  'Variant Metadata',
   'Variant Id',
   'Variant Title',
   'Variant SKU',
@@ -246,9 +245,6 @@ for (const [handle, { productRow, variants, images }] of productMap) {
       'Product Tag 1': '',
       'Product Discountable': 'true',
       'Product External Id': '',
-      'Variant Metadata': productRow['Vendor']
-        ? JSON.stringify({ publisher: productRow['Vendor'] })
-        : '',
       'Variant Id': '',
       'Variant Title': variantTitle,
       'Variant SKU': variant['Variant SKU'] || '',
