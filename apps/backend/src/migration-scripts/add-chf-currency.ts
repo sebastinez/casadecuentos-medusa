@@ -28,13 +28,13 @@ export default async function add_chf_currency({
     throw new Error("No store found");
   }
 
-  const existingCurrencies = (store.supported_currencies ?? []).map(
-    (c: { currency_code: string; is_default?: boolean; is_tax_inclusive?: boolean }) => ({
+  const existingCurrencies = (store.supported_currencies ?? [])
+    .filter((c): c is NonNullable<typeof c> => c != null)
+    .map((c) => ({
       currency_code: c.currency_code,
       is_default: c.is_default ?? false,
       is_tax_inclusive: c.is_tax_inclusive ?? false,
-    })
-  );
+    }));
 
   const alreadyHasChf = existingCurrencies.some(
     (c: { currency_code: string }) => c.currency_code === "chf"
