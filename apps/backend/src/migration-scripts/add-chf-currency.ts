@@ -33,7 +33,7 @@ export default async function add_chf_currency({
     .map((c) => ({
       currency_code: c.currency_code,
       is_default: c.is_default ?? false,
-      is_tax_inclusive: c.is_tax_inclusive ?? false,
+      is_tax_inclusive: true,
     }));
 
   const alreadyHasChf = existingCurrencies.some(
