@@ -15,7 +15,7 @@ export const isLocale = (value: string | undefined | null): value is Locale =>
  */
 export const localeToCountryCode: Record<Locale, string> = {
   de: "ch",
-  es: "es",
+  es: "ch",
 }
 
 /** Resolve the Medusa country code for a given locale string. */
