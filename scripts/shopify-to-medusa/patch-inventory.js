@@ -103,7 +103,7 @@ const rows = parse(fs.readFileSync(inputFile, "utf8"), {
 const skuQtyMap = new Map(); // sku → { qty, title }
 
 for (const row of rows) {
-  const sku = row["Variant SKU"]?.replace(/'/g, "").trim();
+  const sku = row["Variant Barcode"]?.replace(/'/g, "").trim();
   const tracked = row["Variant Inventory Tracker"]?.trim();
   const qty = parseInt(row["Variant Inventory Qty"], 10);
   const title = row["Title"] || row["Handle"];

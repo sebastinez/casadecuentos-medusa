@@ -58,7 +58,7 @@ const rows = parse(fs.readFileSync(inputFile, "utf8"), {
 const skuPriceMap = new Map(); // sku → { chfAmount, title }
 
 for (const row of rows) {
-  const sku = row["Variant SKU"]?.replace(/'/g, "").trim();
+  const sku = row["Variant Barcode"]?.replace(/'/g, "").trim();
   const raw = row["Variant Price"]?.trim();
   const title = row["Title"] || row["Handle"];
 
@@ -122,7 +122,7 @@ async function run() {
 
     const mergedPrices = [
       ...existingPrices,
-      { currency_code: "chf", amount: (chfAmount / 100).toFixed(2) },
+      { currency_code: "chf", amount: chfAmount },
     ];
 
     // 3. Update the variant
@@ -136,7 +136,7 @@ async function run() {
         },
       );
       console.log(
-        `  OK    SKU "${sku}" ("${title}") → CHF ${(chfAmount / 100).toFixed(2)}`,
+        `  OK    SKU "${sku}" ("${title}") → CHF ${chfAmount.toFixed(2)}`,
       );
       patched++;
     } catch (err) {
