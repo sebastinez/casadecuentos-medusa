@@ -44,6 +44,7 @@ export default function PublisherFilter({ publishers }: PublisherFilterProps) {
               className="accent-brand-accent cursor-pointer"
             />
             <label
+              style={{ transform: "none" }}
               htmlFor={`pub-${pub}`}
               className="txt-compact-small text-ui-fg-subtle hover:cursor-pointer hover:text-ui-fg-base"
             >

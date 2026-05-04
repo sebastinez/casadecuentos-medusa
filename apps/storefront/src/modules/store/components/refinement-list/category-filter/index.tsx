@@ -45,6 +45,7 @@ export default function CategoryFilter({ categories }: CategoryFilterProps) {
               className="accent-brand-accent cursor-pointer"
             />
             <label
+              style={{ transform: "none" }}
               htmlFor={`cat-${c.id}`}
               className="txt-compact-small text-ui-fg-subtle hover:cursor-pointer hover:text-ui-fg-base"
             >
