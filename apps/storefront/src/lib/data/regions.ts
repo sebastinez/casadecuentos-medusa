@@ -2,6 +2,7 @@
 
 import { sdk } from "@lib/config"
 import { HttpTypes } from "@medusajs/types"
+import { countryCodeForLocale } from "@i18n/config"
 import { getCacheOptions } from "./cookies"
 
 export const listRegions = async () => {
@@ -34,7 +35,11 @@ export const retrieveRegion = async (id: string) => {
 
 const regionMap = new Map<string, HttpTypes.StoreRegion>()
 
-export const getRegion = async (countryCode: string) => {
+export const getRegion = async (localeOrCountry: string) => {
+  // The URL segment is a locale ("de", "es"), not an ISO country code.
+  // Translate it to the actual country code used in Medusa regions.
+  const countryCode = countryCodeForLocale(localeOrCountry)
+
   if (regionMap.has(countryCode)) {
     return regionMap.get(countryCode)
   }
@@ -53,7 +58,7 @@ export const getRegion = async (countryCode: string) => {
 
   const region = countryCode
     ? regionMap.get(countryCode)
-    : regionMap.get("us")
+    : regionMap.get("ch")
 
   return region
 }
