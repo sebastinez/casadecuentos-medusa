@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { locales } from "@i18n/config"
 import { listProducts } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
@@ -9,31 +8,6 @@ import { HttpTypes } from "@medusajs/types"
 type Props = {
   params: Promise<{ countryCode: string; handle: string }>
   searchParams: Promise<{ v_id?: string }>
-}
-
-export async function generateStaticParams() {
-  try {
-    const promises = locales.map(async (countryCode) => {
-      const { response } = await listProducts({
-        countryCode,
-        queryParams: { limit: 100, fields: "handle" },
-      })
-
-      return response.products
-        .filter((product) => product.handle)
-        .map((product) => ({ countryCode, handle: product.handle }))
-    })
-
-    const all = await Promise.all(promises)
-    return all.flat()
-  } catch (error) {
-    console.error(
-      `Failed to generate static paths for product pages: ${
-        error instanceof Error ? error.message : "Unknown error"
-      }.`
-    )
-    return []
-  }
 }
 
 function getImagesForVariant(
